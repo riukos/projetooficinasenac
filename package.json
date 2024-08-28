@@ -1,0 +1,17 @@
+{
+  "name": "app-electron-lista-de-tarefas",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "electron": "^31.4.0",
+    "electron-reload": "^2.0.0-alpha.1"
+  }
+}

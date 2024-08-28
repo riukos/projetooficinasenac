@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'">
+
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="../src/js/script.js" defer></script>
+
+    <title>Gerenciador de Tarefas</title>
+</head>
+
+<body>
+
+    <div id="card__tarefa">
+        <h2>Lista de Tarefas</h2>
+        <div id="card__tarefa_input">
+            <input type="text" id="inputTarefa" placeholder="Digite uma tarefa...">
+            <span onclick="adicionarTarefa()" class="card__tarefa_btn_add">Adicionar</span>
+        </div>
+    </div>
+
+    <ul id="ul__tarefa">
+
+    </ul>
+
+</body>
+
+</html>
