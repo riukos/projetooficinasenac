@@ -1,0 +1,25 @@
+/* styles.css */
+.meu-botao {
+    background-color: rgb(46, 46, 46);
+    color: white; /* Cor do texto */
+    width: 150px;
+    height: 30px;
+    padding: 0px 15px; /* Espaçamento interno */
+    font-size: 15px; /* Tamanho da fonte */
+    border: none; /* Remover borda padrão */
+    border-radius: 10px; /* Borda arredondada */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    display: flex; /* Alinhamento flexível */
+    align-items: center; /* Alinha ícone e texto verticalmente */
+    gap: 5px; /* Espaço entre o ícone e o texto */
+    transition: background 0.3s; /* Transição suave do degradê */
+}
+
+.meu-botao:hover {
+    background: rgb(255, 81, 0); /* Degradê de verde escuro para azul escuro ao passar o mouse */
+    font-weight: bold;
+}
+
+.bi {
+padding-left: 10px;
+}
