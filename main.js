@@ -1,21 +1,104 @@
-const { app, BrowserWindow } = require('electron');
+// importar Menu para criar menu personalizado
+// importar Shell para abrir um link externo
+const { app, BrowserWindow, ipcMain, Menu, shell, nativeTheme } = require('electron');
 
-function createWindow() {
-    const win = new BrowserWindow({
-        width: 800,
-        height: 600,
+app.on('ready', () => {
+    // nativeTheme.themeSource = 'dark'
+    const janela = new BrowserWindow({
+        width: 1100,
+        height: 660,
+        // resizable: false,
+        // autoHideMenuBar: true,
+        // titleBarStyle: 'hidden',
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
+            contextIsolation: false
         }
     });
 
-    win.loadFile('./src/index.html')
-}
+    // Menu personalizado
+    Menu.setApplicationMenu(Menu.buildFromTemplate(template));
 
-app.whenReady().then(() => {
-    createWindow();
-
-    app.on('activate', () => {
-        if (BrowserWindow.getAllWindows().length === 0) createWindow();
-    })
+    janela.loadURL(`file://${__dirname}/src/index.html`);
 })
+
+let sobreWindow = null;
+
+ipcMain.on('abrir-janela-cliente', () => {
+    if (sobreWindow === null) {
+        sobreWindow = new BrowserWindow({
+            width: 1000,
+            height: 600,
+            webPreferences: {
+                nodeIntegration: true,
+                contextIsolation: false
+            }
+        });
+    }
+    
+    sobreWindow.loadURL(`file://${__dirname}/src/cadastroCliente.html`);
+        
+    sobreWindow.on('closed', () => {
+        sobreWindow = null;
+    });
+    
+});
+
+
+
+app.on('window-all-closed', () => {
+    app.quit();
+})
+
+
+// Criando Template para o Menu
+const template = [
+    {
+        label: 'Arquivo',
+        submenu: [
+            {
+                label: 'Sair',
+                click: () => app.quit(),
+                accelerator: 'Alt + F4'
+            }
+        ]
+    },
+    {
+        label: 'Exibir',
+        submenu: [
+            {
+                label: 'Recarregar',
+                role: 'reload'
+            }, 
+            {
+                label: 'Ferramentas do desenvolvedor',
+                role: 'toggleDevTools'  
+            },
+            {
+                type: 'separator'
+            },
+            {
+                label: 'Aumentar zoom',
+                role: 'zoomIn'  
+            },
+            {
+                label: 'Reduzir zoom',
+                role: 'zoomOut'  
+            }, 
+            {
+                label: 'Restaurar zoom padrão',
+                role: 'resetZoom'  
+            },             
+                       
+        ]
+    },
+    {
+        label: 'Ajuda',
+        submenu: [
+            {
+                label: 'Docs',
+                click: () => shell.openExternal('https://www.electronjs.org/'),
+            }
+        ]
+    }
+]

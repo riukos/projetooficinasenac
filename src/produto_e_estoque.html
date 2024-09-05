@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="./images/speedometer2.svg">
+    <link rel="stylesheet" href="./css/produtoEstoque.css">
+    <title>Formulário de Produtos e Estoque</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Cadastro de Produto & estoque</legend>
+                <div class="form-group">
+                    <label for="produtoNome">Nome do Produto:</label>
+                    <input type="text" id="produtoNome" name="produtoNome" required>
+                </div>
+                <div class="form-group">
+                    <label for="categoria">Categoria:</label>
+                    <select id="categoria" name="categoria" required>
+                        <option value="pecas">Peças</option>
+                        <option value="ferramentas">Ferramentas</option>
+                        <option value="acessorios">Acessórios</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="codigoProduto">Código do Produto:</label>
+                    <input type="text" id="codigoProduto" name="codigoProduto" required>
+                </div>
+                <div class="form-group">
+                    <label for="quantidade">Quantidade em Estoque:</label>
+                    <input type="number" id="quantidade" name="quantidade" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="preco">Preço Unitário (R$):</label>
+                    <input type="number" id="preco" name="preco" step="0.01" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="fornecedor">Fornecedor:</label>
+                    <input type="text" id="fornecedor" name="fornecedor" required>
+                </div>
+                <div class="form-group">
+                    <label for="descricao">Descrição do Produto:</label>
+                    <textarea id="descricao" name="descricao" rows="4"></textarea>
+                </div>
+                <div class="form-group buttons">
+                    <button type="submit">Cadastrar Produto</button>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+
+</body>
+
+</html>

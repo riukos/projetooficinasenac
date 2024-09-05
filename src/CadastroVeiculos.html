@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="./images/speedometer2.svg">
+    <link rel="stylesheet" href="./css/cadastroVeiculo.css">
+    <title>Cadastro veículo</title>
+
+<body>
+
+    <div class="container">
+        <form>
+            <fieldset>
+                <legend>Cadastro de Veículo</legend>
+                <div class="form-group">
+                    <label for="placa">Placa:</label>
+                    <input type="text" id="placa" name="placa">
+                </div>
+                <div class="form-group">
+                    <label for="anoFab">Ano Fab.:</label>
+                    <input type="number" id="anoFab" name="anoFab">
+                </div>
+                <div class="form-group">
+                    <label for="anoMod">Ano Mod.:</label>
+                    <input type="number" id="anoMod" name="anoMod">
+                </div>
+                <div class="form-group">
+                    <label for="kmAtual">Km Atual:</label>
+                    <input type="number" id="kmAtual" name="kmAtual">
+                </div>
+                <div class="form-group">
+                    <label for="cliente">Nome do Cliente ou Proprietário:</label>
+                    <input type="text" id="cliente" name="cliente">
+                </div>
+                <div class="form-group">
+                    <label for="motorista">Nome do Motorista:</label>
+                    <input type="text" id="motorista" name="motorista">
+                </div>
+                <div class="form-group">
+                    <label for="dataCadastro">Data do Cadastro:</label>
+                    <input type="date" id="dataCadastro" name="dataCadastro">
+                </div>
+                <div class="form-group">
+                    <label for="marca">Marca:</label>
+                    <select id="marca" name="marca">
+                        <option value="yamaha">Yamaha</option>
+                        <option value="honda">Honda</option>
+                        <option value="ford">Ford</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="modelo">Modelo:</label>
+                    <input type="text" id="modelo" name="modelo">
+                </div>
+                <div class="form-group">
+                    <label for="tipoCombustivel">Tipo de Combustível:</label>
+                    <select id="tipoCombustivel" name="tipoCombustivel">
+                        <option value="gasolina">Gasolina</option>
+                        <option value="alcool">Álcool</option>
+                        <option value="diesel">Diesel</option>
+                        <option value="flex">Flex</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="observacoes">Observações Gerais:</label>
+                    <textarea id="observacoes" name="observacoes" rows="4"></textarea>
+                </div>
+                <div class="buttons">
+                    <button type="button" class="save-btn">Salvar Cadastro</button>
+                    <button type="button" class="cancel-btn">Sair do Cadastro</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+</body>
+
+</html>

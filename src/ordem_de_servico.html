@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="./images/speedometer2.svg">
+    <link rel="stylesheet" href="./css/ordemserv.css">
+    <title>Ordem de Serviço</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Ordem de Serviço</legend>
+                <div class="form-group">
+                    <label for="nomeCliente">Nome do Cliente:</label>
+                    <input type="text" id="nomeCliente" name="nomeCliente" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="veiculo">Veículo (Marca/Modelo/Ano):</label>
+                    <input type="text" id="veiculo" name="veiculo" required>
+                </div>
+                <div class="form-group">
+                    <label for="placa">Placa do Veículo:</label>
+                    <input type="text" id="placa" name="placa" required>
+                </div>
+                <div class="form-group">
+                    <label for="servicos">Serviços Solicitados:</label>
+                    <textarea id="servicos" name="servicos" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="data">Data de Entrada:</label>
+                    <input type="date" id="data" name="data" required>
+                </div>
+                <div class="form-group">
+                    <label for="status">Status:</label>
+                    <select id="status" name="status" required>
+                        <option value="em_andamento">Em Andamento</option>
+                        <option value="concluido">Concluído</option>
+                        <option value="aguardando_aprovacao">Aguardando Aprovação</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="observacoes">Observações:</label>
+                    <textarea id="observacoes" name="observacoes" rows="4"></textarea>
+                </div>
+                <div class="form-group buttons">
+                    <button class="buttons" type="submit">Enviar Ordem de Serviço</button>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+
+</body>
+
+</html>
