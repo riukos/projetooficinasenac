@@ -44,7 +44,27 @@ ipcMain.on('abrir-janela-cliente', () => {
     
 });
 
+let produtoeestoque = null;
 
+ipcMain.on('abrir-janela-produtoeestoque', () => {
+    if (produtoeestoque === null) {
+        produtoeestoque = new BrowserWindow({
+            width: 1000,
+            height: 600,
+            webPreferences: {
+                nodeIntegration: true,
+                contextIsolation: false
+            }
+        });
+    }
+    
+    produtoeestoque.loadURL(`file://${__dirname}/src/produto_e_estoque.html`);
+        
+    produtoeestoque.on('closed', () => {
+        produtoeestoque = null;
+    });
+    
+});
 
 app.on('window-all-closed', () => {
     app.quit();
