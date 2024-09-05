@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="./images/speedometer2.svg">
+    <link rel="stylesheet" href="./css/cliente.css">
+    <title>Cadastro Cliente</title>
+
+<body>
+
+    <div class="container">
+        <form action="" method="post">
+            <fieldset>
+                <legend>Cadastro de Cliente</legend>
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" maxlength="100">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="cnpj">CNPJ:</label>
+                    <input type="number" id="cnpj" name="cnpj" min="0" max="99999999999">
+                </div>
+                <div class="form-group">
+                    <label for="cpf">CPF:</label>
+                    <input type="number" id="cpf" name="cpf" min="0" max="99999999999">
+                </div>
+                <div class="form-group">
+                    <label for="rg">RG:</label>
+                    <input type="number" id="rg" name="rg" min="0" max="99999999999">
+                </div>
+                <div class="form-group">
+                    <label for="emissor">Emissor:</label>
+                    <input type="text" id="emissor" name="emissor">
+                </div>
+                <div class="form-group">
+                    <label for="registro">Registro:</label>
+                    <input type="number" id="registro" name="registro" min="0" max="100">
+                </div>
+
+                <div class="form-group">
+                    <label for="dataCadastro">Data Cadastro:</label>
+                    <input type="date" id="dataCadastro" name="dataCadastro">
+                </div>
+            </fieldset>
+    </div>
+    <div class="container">
+        <fieldset>
+            <legend>Endereço</legend>
+            <div class="form-group">
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" maxlength="100">
+            </div>
+            <div class="form-group">
+                <label for="rua">Rua:</label>
+                <input type="text" id="rua" name="rua" maxlength="100">
+            </div>
+            <div class="form-group">
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" name="bairro" maxlength="100">
+            </div>
+            <div class="form-group">
+                <label for="complemento">Complemento:</label>
+                <input type="text" id="complemento" name="complemento" maxlength="100">
+            </div>
+            <div class="form-group">
+                <label for="cep">CEP:</label>
+                <input type="number" id="cep" name="cep" min="0" max="99999">
+            </div>
+        </fieldset>
+    </div>
+    <div class="container">
+        <fieldset>
+            <legend>Contatos</legend>
+            <div class="form-group">
+                <label for="telefone1">1-Telefone:</label>
+                <input type="number" id="telefone1" name="telefone1" min="0" max="99999999999">
+            </div>
+            <div class="form-group">
+                <label for="telefone2">2-Telefone:</label>
+                <input type="number" id="telefone2" name="telefone2" min="0" max="99999999999">
+            </div>
+            <div class="form-group">
+                <label for="celular">Celular:</label>
+                <input type="number" id="celular" name="celular" min="0" max="99999999999">
+            </div>
+            <div class="form-group">
+                <label for="uf">UF:</label>
+                <input type="text" id="uf" name="uf" maxlength="2">
+            </div>
+        </fieldset>
+    </div>
+    <div class="container">
+        <fieldset>
+            <legend>Ocorrências/Observações</legend>
+            <div class="form-group">
+                <textarea id="ocorrencias" name="ocorrencias"
+                    placeholder="Digite suas ocorrências ou observações aqui..."></textarea>
+            </div>
+        </fieldset>
+
+        <div class="buttons">
+            <button type="submit">Salvar</button>
+            <button type="reset">Limpar</button>
+        </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

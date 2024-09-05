@@ -5,58 +5,82 @@
 }
 
 body {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.859), #ffffff);
-    width: 100%;
-    height: 100%;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    background:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0) 70%, rgb(113, 109, 109) 100%),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.768) 70%);
 }
 
 .menu-nav {
     display: flex;
     flex-direction: row;
     width: 1024px;
-    height: 300px;
+    height: 100%;
     margin: 0 auto;
-    border: 1px solid chocolate;
 }
 
 .logo-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 200px;
-    height: 200px;
+    height: 120px;
     margin: 30px auto;
-    border: 1px solid chocolate;
+}
+
+.logo-nav img {
+    margin: 40px auto;
+
 }
 
 .menu-nav-content {
-    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 120px;
     margin: 30px auto;
-    padding: 10px;
-    border: 1px solid chocolate;
 }
 
 .button {
-    width: 150px;
+    display: flex;
+    width: 200px;
     height: 30px;
     border-radius: 10px;
-    margin: 30px auto;
-    border: 1px solid chocolate;
+    margin: 5px auto;
+    margin-left: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    color: white;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    background-color: #202020;
+    transition: all ease-in-out 0.2s;
+}
+
+.button .bi {
+    margin: 0 5px;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.button:hover {
+    background-color: #ff5f2d;
+    transform: scale(1.05);
 }
 
 .imgen-section {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     width: 1024px;
     height: 400px;
-    margin: 0 auto;
     flex-basis: 30%;
     cursor: pointer;
     transition: all 0.2s;
-    border: 1px solid chocolate;
-}
-
-.imgen-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px #2c2c2c;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.859), #ffffff);
 }
 
 .imgen-section img {
@@ -67,7 +91,50 @@ body {
     display: flex;
     flex-direction: row;
     width: 1024px;
-    height: 300px;
+    height: 200px;
     margin: 0 auto;
-    border: 1px solid chocolate;
 }
+
+#principal {
+    width: 1024px;
+    margin: auto;
+    position: relative;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#arco1,
+#arco2,
+#arco3 {
+    position: absolute;
+    width: 120vh;
+    height: 120vh;
+    border-radius: 50%;
+}
+
+#arco1 {
+    background-color: #D7AD8B;
+    z-index: 3;
+    top: -10vh;
+    right: -35%;
+    border: 5px solid #CECED6;
+}
+
+#arco2 {
+    background-color: #DE7F20;
+    z-index: 2;
+    top: -10vh;
+    right: -28%;
+    border: 5px solid #CECED6;
+}
+
+#arco3 {
+    background-color: #C68E84;
+    z-index: 1;
+    top: -10vh;
+    right: -21%;
+    border: 5px solid #CECED6;
+}
+
