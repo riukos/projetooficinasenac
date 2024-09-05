@@ -44,7 +44,26 @@ ipcMain.on('abrir-janela-cliente', () => {
     
 });
 
+let ordemdeServico = null;
 
+ipcMain.on('abrir-janela-ordem_de_servico', () => {
+    if (ordemdeServico === null) {
+        ordemdeServico = new BrowserWindow({
+            width: 1000,
+            height: 600,
+            webPreferences: {
+                nodeIntegration: true,
+                contextIsolation: false
+            }
+        });
+    }
+    
+    ordemdeServico.loadURL(`file://${__dirname}/src/ordem_de_servico.html`);
+
+    ordemdeServico.on('closed', () => {
+        ordemdeServico = null;
+    });
+});
 
 app.on('window-all-closed', () => {
     app.quit();
