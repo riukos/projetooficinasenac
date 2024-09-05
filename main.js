@@ -22,11 +22,11 @@ app.on('ready', () => {
     janela.loadURL(`file://${__dirname}/src/index.html`);
 })
 
-let sobreWindow = null;
+let CadastroCliente = null;
 
 ipcMain.on('abrir-janela-cliente', () => {
-    if (sobreWindow === null) {
-        sobreWindow = new BrowserWindow({
+    if (CadastroCliente === null) {
+        CadastroCliente = new BrowserWindow({
             width: 1000,
             height: 600,
             webPreferences: {
@@ -36,10 +36,33 @@ ipcMain.on('abrir-janela-cliente', () => {
         });
     }
     
-    sobreWindow.loadURL(`file://${__dirname}/src/cadastroCliente.html`);
+    CadastroCliente.loadURL(`file://${__dirname}/src/cadastroCliente.html`);
         
-    sobreWindow.on('closed', () => {
-        sobreWindow = null;
+    CadastroCliente.on('closed', () => {
+        CadastroCliente = null;
+    });
+    
+});
+
+
+let relatorio = null;
+
+ipcMain.on('abrir-janela-relatorio', () => {
+    if (relatorio === null) {
+        relatorio = new BrowserWindow({
+            width: 1000,
+            height: 600,
+            webPreferences: {
+                nodeIntegration: true,
+                contextIsolation: false
+            }
+        });
+    }
+    
+    relatorio.loadURL(`file://${__dirname}/src/relatorio.html`);
+        
+    relatorio.on('closed', () => {
+        relatorio = null;
     });
     
 });
