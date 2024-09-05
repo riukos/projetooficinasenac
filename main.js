@@ -44,7 +44,27 @@ ipcMain.on('abrir-janela-cliente', () => {
     
 });
 
+let cadastrodeveiculo = null;
 
+ipcMain.on('abrir-janela-cadastroVeiculos', () => {
+    if (cadastrodeveiculo === null) {
+        cadastrodeveiculo = new BrowserWindow({
+            width: 1000,
+            height: 600,
+            webPreferences: {
+                nodeIntegration: true,
+                contextIsolation: false
+            }
+        });
+    }
+
+    cadastrodeveiculo.loadURL(`file://${__dirname}/src/cadastroVeiculos.html`);
+
+    cadastrodeveiculo.on(`closed`, () => {
+        cadastrodeveiculo = null;
+    });
+
+})
 
 app.on('window-all-closed', () => {
     app.quit();
