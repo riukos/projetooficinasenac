@@ -8,10 +8,13 @@ body {
         linear-gradient(to bottom, rgba(240, 248, 255, 0) 0%, rgba(0, 0, 0, 0.768) 70%);
 }
 
-h1 {
+legend {
     text-align: center;
-    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
     margin-top: 20px;
+    color: white;
 }
 
 fieldset {
@@ -28,7 +31,7 @@ fieldset {
     max-width: 800px;
     margin: 20px auto;
     background:
-    linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgb(73, 73, 73));
+        linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgb(73, 73, 73));
     color: white;
 
 }
