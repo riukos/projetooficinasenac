@@ -31,3 +31,8 @@ CdOrcamento.addEventListener('click', () => {
     ipcRenderer.send('abrir-janela-orcamento');
 
 });
+
+const relatorio = document.getElementById('relatorio');
+relatorio.addEventListener('click', () => {
+    ipcRenderer.send('abrir-janela-relatorio');
+});
