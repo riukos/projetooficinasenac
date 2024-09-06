@@ -67,6 +67,97 @@ ipcMain.on('abrir-janela-relatorio', () => {
     
 });
 
+let orcamento = null;
+
+ipcMain.on('abrir-janela-orcamento', () => {
+    if (orcamento === null) {
+        orcamento = new BrowserWindow({
+            width: 1000,
+            height: 600,
+            webPreferences: {
+                nodeIntegration: true,
+                contextIsolation: false
+            }
+        });
+    }
+    
+    orcamento.loadURL(`file://${__dirname}/src/Orcamento.html`);
+        
+    orcamento.on('closed', () => {
+        orcamento = null;
+    });
+    
+});
+
+
+let ordemdeServico = null;
+
+ipcMain.on('abrir-janela-ordem_de_servico', () => {
+    if (ordemdeServico === null) {
+        ordemdeServico = new BrowserWindow({
+            width: 1000,
+            height: 600,
+            webPreferences: {
+                nodeIntegration: true,
+                contextIsolation: false
+            }
+        });
+    }
+
+    ordemdeServico.loadURL(`file://${__dirname}/src/ordem_de_servico.html`);
+
+    ordemdeServico.on('closed', () => {
+        ordemdeServico = null;
+    });
+
+});
+
+
+
+let produtoeestoque = null;
+
+ipcMain.on('abrir-janela-produtoeestoque', () => {
+    if (produtoeestoque === null) {
+        produtoeestoque = new BrowserWindow({
+            width: 1000,
+            height: 600,
+            webPreferences: {
+                nodeIntegration: true,
+                contextIsolation: false
+            }
+        });
+    }
+
+    produtoeestoque.loadURL(`file://${__dirname}/src/produto_e_estoque.html`);
+
+    produtoeestoque.on('closed', () => {
+        produtoeestoque = null;
+    });
+
+});
+
+
+let cadastrodeveiculo = null;
+          
+ipcMain.on('abrir-janela-cadastroVeiculos', () => {
+    if (cadastrodeveiculo === null) {
+        cadastrodeveiculo = new BrowserWindow({
+            width: 1000,
+            height: 600,
+            webPreferences: {
+                nodeIntegration: true,
+                contextIsolation: false
+                       }
+        });
+    }
+  
+    cadastrodeveiculo.loadURL(`file://${__dirname}/src/cadastroVeiculos.html`);
+
+    cadastrodeveiculo.on(`closed`, () => {
+        cadastrodeveiculo = null;
+    });
+
+})
 
 
 app.on('window-all-closed', () => {
