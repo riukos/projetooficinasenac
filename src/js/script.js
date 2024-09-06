@@ -12,6 +12,9 @@ const CdordemdeServico = document.getElementById('ordemdeServico');
 
 CdordemdeServico.addEventListener('click', () => {
     ipcRenderer.send('abrir-janela-ordem_de_servico');
+});
+
+
 
 const Cdprodutoeestoque = document.getElementById('produtoeestoque');
 

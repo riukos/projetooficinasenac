@@ -22,6 +22,8 @@ app.on('ready', () => {
     janela.loadURL(`file://${__dirname}/src/index.html`);
 })
 
+
+
 let sobreWindow = null;
 
 ipcMain.on('abrir-janela-cliente', () => {
@@ -35,14 +37,15 @@ ipcMain.on('abrir-janela-cliente', () => {
             }
         });
     }
-    
+
     sobreWindow.loadURL(`file://${__dirname}/src/cadastroCliente.html`);
-        
+
     sobreWindow.on('closed', () => {
         sobreWindow = null;
     });
-    
+
 });
+
 
 
 let ordemdeServico = null;
@@ -50,12 +53,6 @@ let ordemdeServico = null;
 ipcMain.on('abrir-janela-ordem_de_servico', () => {
     if (ordemdeServico === null) {
         ordemdeServico = new BrowserWindow({
-let produtoeestoque = null;
-
-ipcMain.on('abrir-janela-produtoeestoque', () => {
-    if (produtoeestoque === null) {
-        produtoeestoque = new BrowserWindow({
-
             width: 1000,
             height: 600,
             webPreferences: {
@@ -64,20 +61,40 @@ ipcMain.on('abrir-janela-produtoeestoque', () => {
             }
         });
     }
-    
+
     ordemdeServico.loadURL(`file://${__dirname}/src/ordem_de_servico.html`);
 
     ordemdeServico.on('closed', () => {
         ordemdeServico = null;
     });
 
+});
+
+
+
+let produtoeestoque = null;
+
+ipcMain.on('abrir-janela-produtoeestoque', () => {
+    if (produtoeestoque === null) {
+        produtoeestoque = new BrowserWindow({
+            width: 1000,
+            height: 600,
+            webPreferences: {
+                nodeIntegration: true,
+                contextIsolation: false
+            }
+        });
+    }
+
     produtoeestoque.loadURL(`file://${__dirname}/src/produto_e_estoque.html`);
-        
+
     produtoeestoque.on('closed', () => {
         produtoeestoque = null;
     });
-    
+
 });
+
+
 
 app.on('window-all-closed', () => {
     app.quit();
@@ -102,27 +119,27 @@ const template = [
             {
                 label: 'Recarregar',
                 role: 'reload'
-            }, 
+            },
             {
                 label: 'Ferramentas do desenvolvedor',
-                role: 'toggleDevTools'  
+                role: 'toggleDevTools'
             },
             {
                 type: 'separator'
             },
             {
                 label: 'Aumentar zoom',
-                role: 'zoomIn'  
+                role: 'zoomIn'
             },
             {
                 label: 'Reduzir zoom',
-                role: 'zoomOut'  
-            }, 
+                role: 'zoomOut'
+            },
             {
                 label: 'Restaurar zoom padrão',
-                role: 'resetZoom'  
-            },             
-                       
+                role: 'resetZoom'
+            },
+
         ]
     },
     {
