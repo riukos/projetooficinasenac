@@ -46,6 +46,28 @@ ipcMain.on('abrir-janela-cliente', () => {
 
 });
 
+let orcamento = null;
+
+ipcMain.on('abrir-janela-orcamento', () => {
+    if (orcamento === null) {
+        orcamento = new BrowserWindow({
+            width: 1000,
+            height: 600,
+            webPreferences: {
+                nodeIntegration: true,
+                contextIsolation: false
+            }
+        });
+    }
+    
+    orcamento.loadURL(`file://${__dirname}/src/Orcamento.html`);
+        
+    orcamento.on('closed', () => {
+        orcamento = null;
+    });
+    
+});
+
 
 
 let ordemdeServico = null;

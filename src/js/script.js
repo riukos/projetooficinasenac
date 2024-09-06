@@ -7,7 +7,6 @@ CdCliente.addEventListener('click', () => {
 });
 
 
-
 const CdordemdeServico = document.getElementById('ordemdeServico');
 CdordemdeServico.addEventListener('click', () => {
     ipcRenderer.send('abrir-janela-ordem_de_servico');
@@ -25,4 +24,10 @@ Cdprodutoeestoque.addEventListener('click', () => {
 const cadastroVeiculos = document.getElementById('cadastroVeiculos');
 cadastroVeiculos.addEventListener('click', () => {
     ipcRenderer.send('abrir-janela-cadastroVeiculos');
+});
+
+const CdOrcamento = document.getElementById('orcamento');
+CdOrcamento.addEventListener('click', () => {
+    ipcRenderer.send('abrir-janela-orcamento');
+
 });
