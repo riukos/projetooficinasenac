@@ -44,11 +44,18 @@ ipcMain.on('abrir-janela-cliente', () => {
     
 });
 
+
+let ordemdeServico = null;
+
+ipcMain.on('abrir-janela-ordem_de_servico', () => {
+    if (ordemdeServico === null) {
+        ordemdeServico = new BrowserWindow({
 let produtoeestoque = null;
 
 ipcMain.on('abrir-janela-produtoeestoque', () => {
     if (produtoeestoque === null) {
         produtoeestoque = new BrowserWindow({
+
             width: 1000,
             height: 600,
             webPreferences: {
@@ -58,6 +65,12 @@ ipcMain.on('abrir-janela-produtoeestoque', () => {
         });
     }
     
+    ordemdeServico.loadURL(`file://${__dirname}/src/ordem_de_servico.html`);
+
+    ordemdeServico.on('closed', () => {
+        ordemdeServico = null;
+    });
+
     produtoeestoque.loadURL(`file://${__dirname}/src/produto_e_estoque.html`);
         
     produtoeestoque.on('closed', () => {
