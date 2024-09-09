@@ -166,6 +166,27 @@ ipcMain.on('abrir-janela-cadastroVeiculos', () => {
 
 })
 
+let listaClientes = null;
+ipcMain.on('abrir-janela-lista-clientes', () => {
+    if (listaClientes === null) {
+        listaClientes = new BrowserWindow({
+            width: 1000,
+            height: 600,
+            autoHideMenuBar: true,
+            webPreferences: {
+                nodeIntegration: true,
+                contextIsolation: false
+            }
+        });
+    }
+
+    listaClientes.loadURL(`file://${__dirname}/src/listaClientes.html`);
+
+    listaClientes.on(`closed`, () => {
+        listaClientes = null;
+    });
+
+})
 
 app.on('window-all-closed', () => {
     app.quit();

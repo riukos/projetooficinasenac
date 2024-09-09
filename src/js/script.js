@@ -36,3 +36,8 @@ const relatorio = document.getElementById('relatorio');
 relatorio.addEventListener('click', () => {
     ipcRenderer.send('abrir-janela-relatorio');
 });
+
+const listaClientes = document.getElementById('listar-clientes');
+listaClientes.addEventListener('click', () => {
+    ipcRenderer.send('abrir-janela-lista-clientes');
+});
