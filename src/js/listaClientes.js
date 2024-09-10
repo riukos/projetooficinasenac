@@ -1,23 +1,27 @@
 function loadClients() {
-    const clientTableBody = document.getElementById('clientTableBody');
+    const clientList = document.getElementById('clientList');
     const savedClients = JSON.parse(localStorage.getItem('DadosCliente')) || [];
 
+    clientList.innerHTML = ''; // Clear the list before adding new clients
+
     savedClients.forEach((client, index) => {
-        const row = document.createElement('tr');
-        Object.values(client).forEach(value => {
-            const cell = document.createElement('td');
-            cell.textContent = value;
-            row.appendChild(cell);
+        const listItem = document.createElement('li');
+        listItem.classList.add('client-item');
+
+        // Create and append client data
+        Object.entries(client).forEach(([key, value]) => {
+            const p = document.createElement('p');
+            p.textContent = `${key}: ${value}`;
+            listItem.appendChild(p);
         });
 
-        const deleteCell = document.createElement('td');
+        // Create and append delete button
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Deletar';
         deleteButton.onclick = () => deleteClient(index);
-        deleteCell.appendChild(deleteButton);
-        row.appendChild(deleteCell);
+        listItem.appendChild(deleteButton);
 
-        clientTableBody.appendChild(row);
+        clientList.appendChild(listItem);
     });
 }
 
@@ -25,7 +29,6 @@ function deleteClient(index) {
     let savedClients = JSON.parse(localStorage.getItem('DadosCliente')) || [];
     savedClients.splice(index, 1);
     localStorage.setItem('DadosCliente', JSON.stringify(savedClients));
-    document.getElementById('clientTableBody').innerHTML = '';
     loadClients();
 }
 
