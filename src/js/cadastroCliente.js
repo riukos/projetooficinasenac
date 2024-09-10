@@ -13,6 +13,8 @@ function saveFormDados() {
     alert('Dados salvos com sucesso!');
 }
 
+
+
 function downloadFile() {
     let fileContent = 'Dados Cadastrais:\n\n';
 
