@@ -42,6 +42,7 @@ listaClientes.addEventListener('click', () => {
     ipcRenderer.send('abrir-janela-lista-clientes');
 });
 
+
 const listaDeOrcamentos = document.getElementById('listar-Orcamentos');
 listaDeOrcamentos.addEventListener('click', () => {
     ipcRenderer.send('abrir-janela-lista-orcamentos');
