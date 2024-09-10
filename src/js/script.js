@@ -41,3 +41,4 @@ const listaClientes = document.getElementById('listar-clientes');
 listaClientes.addEventListener('click', () => {
     ipcRenderer.send('abrir-janela-lista-clientes');
 });
+
