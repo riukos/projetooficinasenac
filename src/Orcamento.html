@@ -1,52 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="imagex/png" href="./images/speedometer2.svg">
+    <link rel="shortcut icon" type="image/png" href="./images/speedometer2.svg">
     <link rel="stylesheet" href="./css/orcamento.css">
     <title>Tela de Orçamento</title>
 </head>
-
 <body>
 
     <div class="container">
-        <form action="" method="post">
+        <form id="orcamentoForm">
             <!-- Cliente Info -->
             <fieldset>
                 <legend>Tela de Orçamentos</legend>
                 <div class="form-group">
                     <label for="nomeCliente">Nome do Cliente</label>
-                    <input type="text" id="nomeCliente" name="nomeCliente">
+                    <input type="text" id="nomeCliente" name="nomeCliente" required>
                 </div>
                 <div class="form-group">
                     <label for="veiculo">Veículo (Placa)</label>
-                    <input type="text" id="veiculo" name="veiculo">
+                    <input type="text" id="veiculo" name="veiculo" required>
                 </div>
                 <div class="form-group">
                     <label for="marca">Marca</label>
-                    <input type="text" id="marca" name="marca">
+                    <input type="text" id="marca" name="marca" required>
                 </div>
                 <div class="form-group">
                     <label for="modelo">Modelo</label>
-                    <input type="text" id="modelo" name="modelo">
+                    <input type="text" id="modelo" name="modelo" required>
                 </div>
                 <div class="form-group">
                     <label for="ano">Ano</label>
-                    <input type="number" id="ano" name="ano">
+                    <input type="number" id="ano" name="ano" required>
                 </div>
                 <div class="form-group">
                     <label for="cor">Cor</label>
-                    <input type="text" id="cor" name="cor">
+                    <input type="text" id="cor" name="cor" required>
                 </div>
                 <div class="form-group">
                     <label for="km">KM</label>
-                    <input type="text" id="km" name="km">
+                    <input type="text" id="km" name="km" required>
                 </div>
                 <div class="form-group">
                     <label for="combustivel">Combustível</label>
-                    <input type="text" id="combustivel" name="combustivel">
+                    <input type="text" id="combustivel" name="combustivel" required>
                 </div>
             </fieldset>
 
@@ -55,35 +53,35 @@
                 <legend>Serviços e Produtos</legend>
                 <div class="form-group">
                     <label for="servicos">Serviços</label>
-                    <textarea id="servicos" name="servicos">Troca de óleo, Manutenção geral, Revisão geral</textarea>
+                    <textarea id="servicos" name="servicos" required>Troca de óleo, Manutenção geral, Revisão geral</textarea>
                 </div>
                 <div class="form-group">
                     <label for="valorProdutos">Valor dos Produtos (R$)</label>
-                    <input type="number" id="valorProdutos" name="valorProdutos" step="0.01" value="500.00">
+                    <input type="number" id="valorProdutos" name="valorProdutos" step="0.01" value="" required>
                 </div>
                 <div class="form-group">
                     <label for="valorServicos">Valor dos Serviços (R$)</label>
-                    <input type="number" id="valorServicos" name="valorServicos" step="0.01" value="300.00">
+                    <input type="number" id="valorServicos" name="valorServicos" step="0.01" value="" required>
                 </div>
                 <div class="form-group">
                     <label for="desconto">Valor de Desconto (R$)</label>
-                    <input type="number" id="desconto" name="desconto" step="0.01" value="0.00">
+                    <input type="number" id="desconto" name="desconto" step="0.01" value="">
                 </div>
                 <div class="form-group">
                     <label for="total">Total (R$)</label>
-                    <input type="number" id="total" name="total" step="0.01" value="800.00" readonly>
+                    <input type="number" id="total" name="total" step="0.01" value="" required>
                 </div>
             </fieldset>
 
             <!-- Buttons -->
             <div class="buttons">
-                <button type="button">Salvar Orçamento</button>
-                <button type="button">Imprimir Orçamento</button>
-                <button type="button">Finalizar O.S.</button>
+                <button type="button" onclick="saveOrcamento()">Salvar Orçamento</button>
+                <button type="button" onclick="generateTxtFile()">Gerar Arquivo TXT</button>
+                <button type="button" onclick="finalizarOS()">Finalizar O.S.</button>
+                <button type="button" onclick="limparCampos()">Limpar Campos</button>
             </div>
         </form>
     </div>
-
+    <script src="./js/orcamento.js"></script>
 </body>
-
 </html>

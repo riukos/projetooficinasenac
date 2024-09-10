@@ -187,6 +187,27 @@ ipcMain.on('abrir-janela-lista-clientes', () => {
     });
 
 })
+let listaDeOrcamentos = null;
+ipcMain.on('abrir-janela-lista-orcamentos', () => {
+    if (listaDeOrcamentos === null) {
+        listaDeOrcamentos = new BrowserWindow({
+            width: 1000,
+            height: 600,
+            autoHideMenuBar: true,
+            webPreferences: {
+                nodeIntegration: true,
+                contextIsolation: false
+            }
+        });
+    }
+
+    listaDeOrcamentos.loadURL(`file://${__dirname}/src/listaDeOrcamentos.html`);
+
+    listaDeOrcamentos.on(`closed`, () => {
+        listaDeOrcamentos = null;
+    });
+
+})
 
 app.on('window-all-closed', () => {
     app.quit();
