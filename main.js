@@ -185,8 +185,31 @@ ipcMain.on('abrir-janela-lista-clientes', () => {
     listaClientes.on(`closed`, () => {
         listaClientes = null;
     });
-
 })
+
+
+let listaProdutoEstoque = null;
+ipcMain.on('abrir-janela-lista-produtos', () => {
+    if (listaProdutoEstoque === null) {
+        listaProdutoEstoque = new BrowserWindow({
+            width: 1000,
+            height: 600,
+            autoHideMenuBar: true,
+            webPreferences: {
+                nodeIntegration: true,
+                contextIsolation: false
+            }
+        });
+    }
+
+    listaProdutoEstoque.loadURL(`file://${__dirname}/src/listarprodutoestoque.html`);
+
+    listaProdutoEstoque.on(`closed`, () => {
+        listaProdutoEstoque = null;
+    });
+})
+
+
 let listaDeOrcamentos = null;
 ipcMain.on('abrir-janela-lista-orcamentos', () => {
     if (listaDeOrcamentos === null) {

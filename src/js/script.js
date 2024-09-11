@@ -47,3 +47,8 @@ const listaDeOrcamentos = document.getElementById('listar-Orcamentos');
 listaDeOrcamentos.addEventListener('click', () => {
     ipcRenderer.send('abrir-janela-lista-orcamentos');
 });
+
+const listaProdutoEstoque = document.getElementById('listar-produtos');
+listaProdutoEstoque.addEventListener('click', () => {
+    ipcRenderer.send('abrir-janela-lista-produtos');
+});
