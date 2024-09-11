@@ -13,5 +13,11 @@
   "devDependencies": {
     "electron": "^31.4.0",
     "electron-reload": "^2.0.0-alpha.1"
+  },
+  "build": {
+    "icon": "src/images/logo.ico",
+    "files": [
+      "dist/**/*"
+    ]
   }
 }

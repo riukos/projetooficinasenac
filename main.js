@@ -1,6 +1,7 @@
 // importar Menu para criar menu personalizado
 // importar Shell para abrir um link externo
 const { app, BrowserWindow, ipcMain, Menu, shell, nativeTheme } = require('electron');
+const path = require('path');
 
 app.on('ready', () => {
     // nativeTheme.themeSource = 'dark'
@@ -12,15 +13,17 @@ app.on('ready', () => {
         // titleBarStyle: 'hidden',
         webPreferences: {
             nodeIntegration: true,
-            contextIsolation: false
-        }
+            contextIsolation: false,
+            preload: path.join(__dirname, 'preload.js')
+        },
+        icon: path.join(__dirname, 'src/images', 'logo.ico')
     });
 
     // Menu personalizado
     Menu.setApplicationMenu(Menu.buildFromTemplate(template));
 
     janela.loadURL(`file://${__dirname}/src/index.html`);
-})
+});
 
 
 
@@ -33,8 +36,10 @@ ipcMain.on('abrir-janela-cliente', () => {
             autoHideMenuBar: true,
             webPreferences: {
                 nodeIntegration: true,
-                contextIsolation: false
-            }
+                contextIsolation: false,
+                preload: path.join(__dirname, 'preload.js')
+            },
+            icon: path.join(__dirname, 'src/images', 'logo.ico')
         });
     }
 
@@ -57,8 +62,11 @@ ipcMain.on('abrir-janela-relatorio', () => {
             autoHideMenuBar: true,
             webPreferences: {
                 nodeIntegration: true,
-                contextIsolation: false
-            }
+                contextIsolation: false,
+                preload: path.join(__dirname, 'preload.js')
+
+            },
+            icon: path.join(__dirname, 'src/images', 'logo.ico')
         });
     }
 
@@ -81,8 +89,11 @@ ipcMain.on('abrir-janela-orcamento', () => {
             autoHideMenuBar: true,
             webPreferences: {
                 nodeIntegration: true,
-                contextIsolation: false
-            }
+                contextIsolation: false,
+                preload: path.join(__dirname, 'preload.js')
+
+            },
+            icon: path.join(__dirname, 'src/images', 'logo.ico')
         });
     }
 
@@ -105,8 +116,10 @@ ipcMain.on('abrir-janela-ordem_de_servico', () => {
             autoHideMenuBar: true,
             webPreferences: {
                 nodeIntegration: true,
-                contextIsolation: false
-            }
+                contextIsolation: false,
+                preload: path.join(__dirname, 'preload.js')
+            },
+            icon: path.join(__dirname, 'src/images', 'logo.ico')
         });
     }
 
@@ -129,8 +142,10 @@ ipcMain.on('abrir-janela-produtoeestoque', () => {
             autoHideMenuBar: true,
             webPreferences: {
                 nodeIntegration: true,
-                contextIsolation: false
-            }
+                contextIsolation: false,
+                preload: path.join(__dirname, 'preload.js')
+            },
+            icon: path.join(__dirname, 'src/images', 'logo.ico')
         });
     }
 
@@ -153,8 +168,10 @@ ipcMain.on('abrir-janela-cadastroVeiculos', () => {
             autoHideMenuBar: true,
             webPreferences: {
                 nodeIntegration: true,
-                contextIsolation: false
-            }
+                contextIsolation: false,
+                preload: path.join(__dirname, 'preload.js')
+            },
+            icon: path.join(__dirname, 'src/images', 'logo.ico')
         });
     }
 
@@ -175,8 +192,10 @@ ipcMain.on('abrir-janela-lista-clientes', () => {
             autoHideMenuBar: true,
             webPreferences: {
                 nodeIntegration: true,
-                contextIsolation: false
-            }
+                contextIsolation: false,
+                preload: path.join(__dirname, 'preload.js')
+            },
+            icon: path.join(__dirname, 'src/images', 'logo.ico')
         });
     }
 
@@ -196,8 +215,10 @@ ipcMain.on('abrir-janela-lista-orcamentos', () => {
             autoHideMenuBar: true,
             webPreferences: {
                 nodeIntegration: true,
-                contextIsolation: false
-            }
+                contextIsolation: false,
+                preload: path.join(__dirname, 'preload.js')
+            },
+            icon: path.join(__dirname, 'src/images', 'logo.ico')
         });
     }
 
