@@ -1,5 +1,20 @@
 const { ipcRenderer } = require('electron');
 
+// Função para abrir uma janela com base na seleção do `select`
+const handleSelectionChange = (event) => {
+    const value = event.target.value;
+
+    if (value === 'produtos') {
+        ipcRenderer.send('abrir-janela-produtoeestoque');
+    } else if (value === 'listar-produtos') {
+        ipcRenderer.send('abrir-janela-lista-produtos');
+    }
+};
+
+// Adiciona um listener ao `select`
+const produtoEstoqueSelect = document.getElementById('produto-estoque-lista');
+produtoEstoqueSelect.addEventListener('change', handleSelectionChange);
+
 
 const CdCliente = document.getElementById('cadastroCliente');
 CdCliente.addEventListener('click', () => {
@@ -20,7 +35,7 @@ Cdprodutoeestoque.addEventListener('click', () => {
 });
 
 
-  
+
 const cadastroVeiculos = document.getElementById('cadastroVeiculos');
 cadastroVeiculos.addEventListener('click', () => {
     ipcRenderer.send('abrir-janela-cadastroVeiculos');
@@ -46,9 +61,4 @@ listaClientes.addEventListener('click', () => {
 const listaDeOrcamentos = document.getElementById('listar-Orcamentos');
 listaDeOrcamentos.addEventListener('click', () => {
     ipcRenderer.send('abrir-janela-lista-orcamentos');
-});
-
-const listaProdutoEstoque = document.getElementById('listar-produtos');
-listaProdutoEstoque.addEventListener('click', () => {
-    ipcRenderer.send('abrir-janela-lista-produtos');
 });

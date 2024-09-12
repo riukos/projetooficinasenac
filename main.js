@@ -26,6 +26,53 @@ app.on('ready', () => {
 });
 
 
+let produtoeestoque = null;
+ipcMain.on('abrir-janela-produtoeestoque', () => {
+    if (produtoeestoque === null) {
+        produtoeestoque = new BrowserWindow({
+            width: 1000,
+            height: 600,
+            autoHideMenuBar: true,
+            webPreferences: {
+                nodeIntegration: true,
+                contextIsolation: false,
+                preload: path.join(__dirname, 'preload.js')
+            },
+            icon: path.join(__dirname, 'src/images', 'logo.ico')
+        });
+
+        produtoeestoque.loadURL(`file://${__dirname}/src/produto_e_estoque.html`);
+
+        produtoeestoque.on('closed', () => {
+            produtoeestoque = null;
+        });
+    }
+});
+
+let listaProdutoEstoque = null;
+ipcMain.on('abrir-janela-lista-produtos', () => {
+    if (listaProdutoEstoque === null) {
+        listaProdutoEstoque = new BrowserWindow({
+            width: 1000,
+            height: 600,
+            autoHideMenuBar: true,
+            webPreferences: {
+                nodeIntegration: true,
+                contextIsolation: false,
+                preload: path.join(__dirname, 'preload.js')
+            },
+            icon: path.join(__dirname, 'src/images', 'logo.ico')
+        });
+
+        listaProdutoEstoque.loadURL(`file://${__dirname}/src/listarprodutoestoque.html`);
+
+        listaProdutoEstoque.on('closed', () => {
+            listaProdutoEstoque = null;
+        });
+    }
+});
+
+
 
 let CadastroCliente = null;
 ipcMain.on('abrir-janela-cliente', () => {
@@ -133,32 +180,6 @@ ipcMain.on('abrir-janela-ordem_de_servico', () => {
 
 
 
-let produtoeestoque = null;
-ipcMain.on('abrir-janela-produtoeestoque', () => {
-    if (produtoeestoque === null) {
-        produtoeestoque = new BrowserWindow({
-            width: 1000,
-            height: 600,
-            autoHideMenuBar: true,
-            webPreferences: {
-                nodeIntegration: true,
-                contextIsolation: false,
-                preload: path.join(__dirname, 'preload.js')
-            },
-            icon: path.join(__dirname, 'src/images', 'logo.ico')
-        });
-    }
-
-    produtoeestoque.loadURL(`file://${__dirname}/src/produto_e_estoque.html`);
-
-    produtoeestoque.on('closed', () => {
-        produtoeestoque = null;
-    });
-
-});
-
-
-
 let cadastrodeveiculo = null;
 ipcMain.on('abrir-janela-cadastroVeiculos', () => {
     if (cadastrodeveiculo === null) {
@@ -203,28 +224,6 @@ ipcMain.on('abrir-janela-lista-clientes', () => {
 
     listaClientes.on(`closed`, () => {
         listaClientes = null;
-    });
-})
-
-
-let listaProdutoEstoque = null;
-ipcMain.on('abrir-janela-lista-produtos', () => {
-    if (listaProdutoEstoque === null) {
-        listaProdutoEstoque = new BrowserWindow({
-            width: 1000,
-            height: 600,
-            autoHideMenuBar: true,
-            webPreferences: {
-                nodeIntegration: true,
-                contextIsolation: false
-            }
-        });
-    }
-
-    listaProdutoEstoque.loadURL(`file://${__dirname}/src/listarprodutoestoque.html`);
-
-    listaProdutoEstoque.on(`closed`, () => {
-        listaProdutoEstoque = null;
     });
 })
 

@@ -20,13 +20,11 @@
                     <label for="produtoNome">Nome do Produto</label>
                     <input type="text" id="produtoNome" name="produtoNome" required>
                 </div>
-                <div class="form-group">
-                    <label for="categoria">Categoria</label>
-                    <select id="categoria" name="categoria" required>
-                        <option value="pecas">Peças</option>
-                        <option value="ferramentas">Ferramentas</option>
-                        <option value="acessorios">Acessórios</option>
-                        <option value="outros">Outros</option>
+                <div class="menu-nav-content">
+                    <button class="button" id="orcamento"><i class="bi bi-cash-coin"></i> Orçamento</button>
+                    <select id="produto-estoque-lista" class="button">
+                        <option value="produtos">Cadastrar Produto</option>
+                        <option value="listar-produtos">Listar Estoque</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -53,13 +51,12 @@
                     <button type="button" class="save-btn">Cadastrar Produto</button>
                     <button type="button" class="cancel-btn">Limpar Formulário</button>
                     <button type="button" class="generate-txt-btn">Gerar Arquivo TXT</button>
-
                 </div>
 
             </fieldset>
         </form>
     </div>
-    
+
     <script src="./js/ProdutoEstoque.js"></script>
 </body>
 

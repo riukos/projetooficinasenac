@@ -63,3 +63,4 @@ document.querySelector('.save-btn').addEventListener('click', salvarCadastro);
 document.querySelector('.cancel-btn').addEventListener('click', limparFormulario);
 document.querySelector('.generate-txt-btn').addEventListener('click', gerarArquivoTxt);
 document.querySelector('.generate-txt-btn').addEventListener('click', gerarArquivoTxt);
+
