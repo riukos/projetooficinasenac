@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/relatorio.css">
+    <script src="./js/relatorio.js" defer></script>
     <title>Relatório de Manutenção</title>
 </head>
-
 <body>
-
     <div class="container">
         <fieldset>
-            <legend>Relatório de Manutençaõ</legend>
-            <form action="">
-                <input class="form-group" type="date" id="data" placeholder="Data">
-                <input class="form-group" type="text" id="veiculo" placeholder="Veículo">
-                <input class="form-group" type="text" id="servico" placeholder="Serviço Realizado">
-                <input class="form-group" type="text" id="tecnico" placeholder="Técnico Responsável">
+            <legend>Relatório de Manutenção</legend>
+            <form class="Form-cliente">
+                <input class="form-group" type="date" id="data" name="data" placeholder="Data">
+                <input class="form-group" type="text" id="veiculo" name="veiculo" placeholder="Veículo">
+                <input class="form-group" type="text" id="servico" name="servico" placeholder="Serviço Realizado">
+                <input class="form-group" type="text" id="tecnico" name="tecnico" placeholder="Técnico Responsável">
+                
+                <!-- Seção para linhas adicionais -->
+                <div id="additional-rows-container">
+                    <!-- Linhas adicionais serão adicionadas aqui -->
+                </div>
+                
+                <!-- Textarea para Observações Adicionais -->
+                <textarea class="fixed-textarea" id="observacoes" name="observacoes" placeholder="Observações Adicionais..."></textarea>
+
+                
+                <!-- Botões de ação -->
+                <div class="buttons">
+                    <button type="button" class="button" onclick="saveFormDados()">Salvar</button>
+                    <button type="button" class="button" onclick="downloadFile()">Gerar Relatório</button>
+                    <button type="button" class="button" onclick="printReport()">Imprimir</button>
+                    <button type="button" class="button" onclick="clearForm()">Limpar Campos</button>
+                </div>
             </form>
-            <div class="buttons">
-                <button>Adicionar Linha</button>
-                <button>Gerar Relatório</button>
-                <button>Imprimir</button>
-                <button>Salvar</button>
-                <button>Exportar para CSV</button>
-            </div>
         </fieldset>
     </div>
 </body>
-
 </html>

@@ -33,7 +33,6 @@ fieldset {
     background:
         linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgb(73, 73, 73));
     color: white;
-
 }
 
 .form-group input[type="text"],
@@ -50,8 +49,36 @@ fieldset {
     background-color: white;
 }
 
+#additional-rows-container {
+    margin-bottom: 20px; /* Ajuste o espaço abaixo do contêiner de linhas adicionais */
+}
+
+.additional-row {
+    width: calc(100% - 22px);
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+/* Estilo para o textarea de Observações Adicionais */
+.fixed-textarea {
+    width: calc(100% - 22px);
+    height: 100px;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 10px; /* Espaço acima do textarea */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .buttons {
     text-align: center;
+    margin-top: 10px; /* Adiciona um pouco de espaço acima dos botões */
 }
 
 .buttons button {
@@ -69,3 +96,30 @@ fieldset {
     font-weight: bold;
     background-color: #ff5f2d;
 }
+
+.Form-cliente > button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button:hover {
+    color: white;
+    font-weight: bold;
+    background-color: #ff5f2d;
+}
+
