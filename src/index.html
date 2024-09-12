@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/script.js" defer></script>
-    
+
     <title>Oficina Senac</title>
 </head>
 
@@ -22,7 +22,7 @@
                     <button id="cadastroCliente" class="button"><i class="bi bi-car-front"></i>
                         Cadastro de Cliente
                     </button>
-                    <button class="button" id="listar-Orcamentos"><i class="bi bi-person-add"></i>
+                    <button class="button" id="listar-Orcamentos"><i class="bi bi-list-check"></i>
                         Listar Orçamentos
                     </button>
                 </div>
@@ -30,7 +30,7 @@
                     <button id="relatorio" class="button"><i class="bi bi-file-earmark-spreadsheet"></i>
                         Relatorio
                     </button>
-                    <button id="ordemdeServico" class="button" ><i class="bi bi-tools"></i>
+                    <button id="ordemdeServico" class="button"><i class="bi bi-tools"></i>
                         Ordem de Serviço
                     </button>
                 </div>
@@ -38,9 +38,10 @@
                     <button class="button" id="orcamento"><i class="bi bi-cash-coin"></i>
                         Orçamento
                     </button>
-                    <button id=produtoeestoque class="button"><i class="bi bi-archive"></i>
-                        Produto e Estoque
-                    </button>
+                    <select id="produto-estoque-lista" class="button">
+                        <option id="produtoeestoque" value="produtos">Cadastrar Produto</option>
+                        <option id="listar-produtos" value="listar-produtos">Listar Estoque</option>
+                    </select>
                 </div>
                 <div class="menu-nav-content">
                     <button class="button" id="cadastroVeiculos"><i class="bi bi-car-front"></i>
@@ -49,17 +50,14 @@
                     <button class="button" id="listar-clientes"><i class="bi bi-list-check"></i>
                         Listar Clientes
                     </button>
-                    <button class="button" id="listar-produtos"><i class="bi bi-list-check"></i>
-                        Listar Produtos
-                    </button>
-                </div>
 
+                </div>
             </nav>
 
             <div class="imgen-section">
                 <img src="./images/pngwing.com.png" alt="imagen do carro e moto. ">
             </div>
-            
+
             <footer class="footer-content">
 
             </footer>

@@ -1,11 +1,23 @@
 body {
     margin: 0 auto;
-    position: relative;
-    width: 70%;
+    position: absolute;
+    width: 100%;
     height: 100%;
     background:
         linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0) 70%, rgb(113, 109, 109) 100%),
         linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.768) 70%);
+}
+
+.container {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+    background:
+        linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgb(73, 73, 73));
+    color: white;
+
 }
 
 ul {
@@ -45,10 +57,11 @@ button:hover {
 
 legend {
     text-align: center;
+    justify-content: center;
     font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
     margin-top: 50px;
     padding-bottom: 50px;
-    color: rgb(0, 0, 0);
+    color: white;
 }

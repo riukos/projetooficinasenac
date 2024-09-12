@@ -1,9 +1,9 @@
 // Função para salvar os dados no LocalStorage
 function salvarCadastro() {
     // Obter os valores dos campos
+    console.log('entrou na funcao');
     const produto = {
         produtoNome: document.getElementById('produtoNome').value,
-        categoria: document.getElementById('categoria').value,
         codigoProduto: document.getElementById('codigoProduto').value,
         quantidade: document.getElementById('quantidade').value,
         preco: document.getElementById('preco').value,
@@ -50,7 +50,6 @@ function gerarArquivoTxt() {
 // Função para limpar os campos do formulário
 function limparFormulario() {
     document.getElementById('produtoNome').value = '';
-    document.getElementById('categoria').value = '';
     document.getElementById('codigoProduto').value = '';
     document.getElementById('quantidade').value = '';
     document.getElementById('preco').value = '';
@@ -62,4 +61,5 @@ function limparFormulario() {
 document.querySelector('.save-btn').addEventListener('click', salvarCadastro);
 document.querySelector('.cancel-btn').addEventListener('click', limparFormulario);
 document.querySelector('.generate-txt-btn').addEventListener('click', gerarArquivoTxt);
-document.querySelector('.generate-txt-btn').addEventListener('click', gerarArquivoTxt);
+
+
