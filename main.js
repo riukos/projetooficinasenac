@@ -14,7 +14,7 @@ app.on('ready', () => {
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
-            preload: path.join(__dirname, 'preload.js')
+            // preload: path.join(__dirname, 'preload.js')
         },
         icon: path.join(__dirname, 'src/images', 'logo.ico')
     });
@@ -36,7 +36,7 @@ ipcMain.on('abrir-janela-produtoeestoque', () => {
             webPreferences: {
                 nodeIntegration: true,
                 contextIsolation: false,
-                preload: path.join(__dirname, 'preload.js')
+                // preload: path.join(__dirname, 'preload.js')
             },
             icon: path.join(__dirname, 'src/images', 'logo.ico')
         });
@@ -59,7 +59,7 @@ ipcMain.on('abrir-janela-lista-produtos', () => {
             webPreferences: {
                 nodeIntegration: true,
                 contextIsolation: false,
-                preload: path.join(__dirname, 'preload.js')
+                // preload: path.join(__dirname, 'preload.js')
             },
             icon: path.join(__dirname, 'src/images', 'logo.ico')
         });
@@ -84,7 +84,7 @@ ipcMain.on('abrir-janela-cliente', () => {
             webPreferences: {
                 nodeIntegration: true,
                 contextIsolation: false,
-                preload: path.join(__dirname, 'preload.js')
+                // preload: path.join(__dirname, 'preload.js')
             },
             icon: path.join(__dirname, 'src/images', 'logo.ico')
         });
@@ -110,7 +110,7 @@ ipcMain.on('abrir-janela-relatorio', () => {
             webPreferences: {
                 nodeIntegration: true,
                 contextIsolation: false,
-                preload: path.join(__dirname, 'preload.js')
+                // preload: path.join(__dirname, 'preload.js')
 
             },
             icon: path.join(__dirname, 'src/images', 'logo.ico')
@@ -137,7 +137,7 @@ ipcMain.on('abrir-janela-orcamento', () => {
             webPreferences: {
                 nodeIntegration: true,
                 contextIsolation: false,
-                preload: path.join(__dirname, 'preload.js')
+                // preload: path.join(__dirname, 'preload.js')
 
             },
             icon: path.join(__dirname, 'src/images', 'logo.ico')
@@ -164,7 +164,7 @@ ipcMain.on('abrir-janela-ordem_de_servico', () => {
             webPreferences: {
                 nodeIntegration: true,
                 contextIsolation: false,
-                preload: path.join(__dirname, 'preload.js')
+                // preload: path.join(__dirname, 'preload.js')
             },
             icon: path.join(__dirname, 'src/images', 'logo.ico')
         });
@@ -190,7 +190,7 @@ ipcMain.on('abrir-janela-cadastroVeiculos', () => {
             webPreferences: {
                 nodeIntegration: true,
                 contextIsolation: false,
-                preload: path.join(__dirname, 'preload.js')
+                // preload: path.join(__dirname, 'preload.js')
             },
             icon: path.join(__dirname, 'src/images', 'logo.ico')
         });
@@ -214,7 +214,7 @@ ipcMain.on('abrir-janela-lista-clientes', () => {
             webPreferences: {
                 nodeIntegration: true,
                 contextIsolation: false,
-                preload: path.join(__dirname, 'preload.js')
+                // preload: path.join(__dirname, 'preload.js')
             },
             icon: path.join(__dirname, 'src/images', 'logo.ico')
         });
@@ -238,7 +238,7 @@ ipcMain.on('abrir-janela-lista-orcamentos', () => {
             webPreferences: {
                 nodeIntegration: true,
                 contextIsolation: false,
-                preload: path.join(__dirname, 'preload.js')
+                // preload: path.join(__dirname, 'preload.js')
             },
             icon: path.join(__dirname, 'src/images', 'logo.ico')
         });
