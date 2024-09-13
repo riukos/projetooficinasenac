@@ -13,6 +13,7 @@ function loadProducts() {
         Object.entries(product).forEach(([key, value]) => {
             const p = document.createElement('p');
             p.textContent = `${key}: ${value}`;
+            console.log(`${key}`);
             listItem.appendChild(p);
         });
 

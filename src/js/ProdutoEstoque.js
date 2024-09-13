@@ -32,7 +32,6 @@ function gerarArquivoTxt() {
     produtos.forEach((produto, index) => {
         conteudo += `Produto ${index + 1}:\n`;
         conteudo += `Nome do Produto: ${produto.produtoNome}\n`;
-        conteudo += `Categoria: ${produto.categoria}\n`;
         conteudo += `Código do Produto: ${produto.codigoProduto}\n`;
         conteudo += `Quantidade: ${produto.quantidade}\n`;
         conteudo += `Preço Unitário: R$ ${produto.preco}\n`;

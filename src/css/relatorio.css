@@ -1,11 +1,9 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     position: relative;
     height: 100vh;
-    background:
-        linear-gradient(to bottom, rgba(240, 248, 255, 0) 0%, rgba(240, 248, 255, 0) 70%, rgba(240, 248, 255, 0) 70%, #f0f8ff 100%),
-        linear-gradient(to bottom, rgba(240, 248, 255, 0) 0%, rgba(0, 0, 0, 0.768) 70%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.493) 0%, rgb(73, 73, 73));
 }
 
 legend {
@@ -50,7 +48,8 @@ fieldset {
 }
 
 #additional-rows-container {
-    margin-bottom: 20px; /* Ajuste o espaço abaixo do contêiner de linhas adicionais */
+    margin-bottom: 20px;
+    /* Ajuste o espaço abaixo do contêiner de linhas adicionais */
 }
 
 .additional-row {
@@ -72,13 +71,15 @@ fieldset {
     border: none;
     border-radius: 10px;
     background-color: white;
-    margin-top: 10px; /* Espaço acima do textarea */
+    margin-top: 10px;
+    /* Espaço acima do textarea */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .buttons {
     text-align: center;
-    margin-top: 10px; /* Adiciona um pouco de espaço acima dos botões */
+    margin-top: 10px;
+    /* Adiciona um pouco de espaço acima dos botões */
 }
 
 .buttons button {
@@ -97,7 +98,7 @@ fieldset {
     background-color: #ff5f2d;
 }
 
-.Form-cliente > button {
+.Form-cliente>button {
     padding: 10px 20px;
     font-size: 16px;
     border: none;
@@ -122,4 +123,3 @@ fieldset {
     font-weight: bold;
     background-color: #ff5f2d;
 }
-
